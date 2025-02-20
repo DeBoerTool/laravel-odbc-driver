@@ -9,15 +9,15 @@ use PDO;
 
 class OdbcConnector extends IlluminateConnector implements ConnectorInterface
 {
-    /**
-     * @throws \Exception
-     */
-    public function connect(array $config): PDO
-    {
-        return $this->createConnection(
-            Arr::get($config, 'dsn'),
-            $config,
-            $this->getOptions($config),
-        );
-    }
+	/**
+	 * @throws \Exception
+	 */
+	public function connect(array $config): PDO
+	{
+		return $this->createConnection(
+			Arr::get($config, 'dsn'),
+			$config,
+			$this->getOptions($config),
+		);
+	}
 }

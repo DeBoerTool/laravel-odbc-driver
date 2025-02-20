@@ -60,5 +60,5 @@ jobs:
       - name: Run Tests
         run: composer ci
 
-      - name: Run Pint
-        run: composer pint-dry
+      - name: Run Style Checks
+        run: composer cs-dry

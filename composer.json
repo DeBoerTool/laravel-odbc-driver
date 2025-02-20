@@ -26,7 +26,7 @@
         "illuminate/database": "^9.0|^10.0|^11.0"
     },
     "require-dev": {
-        "laravel/pint": "^1.5",
+        "friendsofphp/php-cs-fixer": "^3.69",
         "orchestra/testbench": "^7.0",
         "phpunit/phpunit": "^9.5|^10.5"
     },
@@ -50,8 +50,8 @@
     "scripts": {
         "test": "phpunit --no-coverage",
         "coverage": "phpunit --coverage-html coverage",
-        "pint": "pint",
-        "pint-dry": "pint --test",
+        "cs-fix": "php-cs-fixer fix --verbose",
+        "cs-dry": "php-cs-fixer fix --verbose --dry-run",
         "ci": "phpunit --configuration=phpunit.ci.xml"
     },
     "config": {

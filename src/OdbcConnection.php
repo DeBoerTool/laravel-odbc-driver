@@ -10,17 +10,17 @@ use Illuminate\Database\Schema\Grammars\Grammar as IlluminateSchemaGrammar;
 
 class OdbcConnection extends IlluminateConnection
 {
-    protected function getDefaultQueryGrammar(): IlluminateQueryGrammar
-    {
-        return isset($this->config['grammar']['query'])
-            ? new $this->config['grammar']['query']
-            : new QueryGrammar();
-    }
+	protected function getDefaultQueryGrammar(): IlluminateQueryGrammar
+	{
+		return isset($this->config['grammar']['query'])
+			? new $this->config['grammar']['query']()
+			: new QueryGrammar();
+	}
 
-    protected function getDefaultSchemaGrammar(): IlluminateSchemaGrammar
-    {
-        return isset($this->config['grammar']['schema'])
-            ? new $this->config['grammar']['schema']
-            : new SchemaGrammar();
-    }
+	protected function getDefaultSchemaGrammar(): IlluminateSchemaGrammar
+	{
+		return isset($this->config['grammar']['schema'])
+			? new $this->config['grammar']['schema']()
+			: new SchemaGrammar();
+	}
 }
