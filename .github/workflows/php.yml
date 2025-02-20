@@ -62,3 +62,9 @@ jobs:
 
       - name: Run Style Checks
         run: composer cs-dry
+        # This env var enables PHP-CS-Fixer to run on PHP 8.4 even though the
+        # package doesn't officially support it yet. We don't use any PHP 8.4
+        # features, so this should be fine. Once 8.4 support drops, this should
+        # be removed.
+        env:
+          PHP_CS_FIXER_IGNORE_ENV: ${{ matrix.php-version == '8.4' && '1' || '' }}
